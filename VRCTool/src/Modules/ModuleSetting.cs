@@ -18,7 +18,7 @@ namespace VRCTool.Modules
 
 	public class BoolSetting : ModuleSetting
 	{
-		public bool Value { get; set; }
+		public bool Value;
 
 		public BoolSetting(string name, bool defaultValue) : base(name)
 		{
@@ -27,22 +27,32 @@ namespace VRCTool.Modules
 	}
 
 	public class FloatSetting : ModuleSetting
-	{ 
-		public float Value { get; set; }
+	{
+		public float Value;
 
-		public FloatSetting(string name, float defaultValue) : base(name)
+        public float Min { get; private set; }
+        public float Max { get; private set; }
+
+        public FloatSetting(string name, float defaultValue, float min, float max) : base(name)
 		{
 			Value = defaultValue;
+			Min = min;
+			Max = max;
 		}
 	}
 
 	public class IntSetting : ModuleSetting
 	{
-        public int Value { get; set; }
+        public int Value;
 
-        public IntSetting(string name, int defaultValue) : base(name)
+        public int Min { get; private set; }
+        public int Max { get; private set; }
+
+        public IntSetting(string name, int defaultValue, int min, int max) : base(name)
         {
             Value = defaultValue;
+			Min = min;
+			Max = max;
         }
     }
 }

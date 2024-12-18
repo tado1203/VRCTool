@@ -11,16 +11,16 @@ namespace VRCTool.Managers
 
     public class ModuleManager
 	{
-		private static readonly List<ModuleBase> _modules = new List<ModuleBase>();
+		public static List<ModuleBase> Modules = new List<ModuleBase>();
 
 		public static void Init()
 		{
-            _modules.Add(new Menu());
+            Modules.Add(new Menu());
 		}
 
 		public static void UpdateModules()
 		{
-			foreach (var module in _modules)
+			foreach (var module in Modules)
 			{
 				module.CheckKeyBind();
 				module.OnUpdate();
@@ -29,7 +29,7 @@ namespace VRCTool.Managers
 
 		public static void RenderModules()
 		{
-			foreach (var module in _modules)
+			foreach (var module in Modules)
 			{
 				module.OnImGuiRender();
 			}

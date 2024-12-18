@@ -14,9 +14,10 @@ namespace VRCTool.Modules
 
     public abstract class ModuleBase
     {
+        public bool IsEnabled;
+
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public bool IsEnabled { get; private set; }
         public ModuleCategory Category { get; private set; }
         public KeyCode KeyBind { get; private set; }
         public List<ModuleSetting> Settings { get; private set; } = new List<ModuleSetting>();

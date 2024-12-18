@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VRC.SDKBase;
 
-namespace VRCTool.src.SDK
+namespace VRCTool
 {
     public class SDK
     {
